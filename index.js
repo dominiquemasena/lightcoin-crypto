@@ -65,15 +65,21 @@ const myAccount = new Account("Dominique");
 
 console.log('Starting Balance:', myAccount.balance);
 
-const t1 = new Withdrawal(50.25, myAccount);
+const t1 = new Deposit(120.00, myAccount);
+t1.commit()
+console.log('Transaction 1:', myAccount.balance);
 
-console.log('Transaction 1:', t1.commit());
+const t3 = new Withdrawal(50.25, myAccount);
+t3.commit()
+console.log('Transaction 3:', myAccount.balance);
 
 const t2 = new Withdrawal(9.99, myAccount);
-console.log('Transaction 2:', t2.commit());
+t2.commit()
+console.log('Transaction 2:', myAccount.balance);
 
-const t3 = new Deposit(120.00, myAccount);
-console.log('Transaction 3:', t3.commit());
+// const t3 = new Deposit(120.00, myAccount);
+// t3.commit()
+// console.log('Transaction 3:', myAccount.balance);
 
 console.log('Ending Balance:', myAccount.balance);
 // console.log('Balance:', account.balance);
